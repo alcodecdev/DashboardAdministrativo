@@ -1,0 +1,22 @@
+<article class="user-container">
+  @if (user$ | async; as user) {
+    <section class="user-card">
+      <div class="user-header">
+        <h2 class="user-name">{{ user.name }}</h2>
+        <span class="status-badge" [ngClass]="user.status">{{ user.status }}</span>
+      </div>
+
+      <div class="user-info">
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Rol:</strong> {{ user.role }}</p>
+        <p><strong>Último acceso:</strong> {{ user.lastLogin | date:'medium' }}</p>
+      </div>
+
+      <button class="primary" [routerLink]="['/user-edit', user.id]">
+        Editar Usuario
+      </button>
+    </section>
+  } @else {
+    <p class="loading">Cargando perfil de usuario...</p>
+  }
+</article>

@@ -1,0 +1,143 @@
+{
+  "stats": [
+    {
+      "id": "0",
+      "title": "Ventas Totales",
+      "value": 24500,
+      "icon": "payments",
+      "trend": "up",
+      "percentage": 12
+    },
+    {
+      "id": "1",
+      "title": "Nuevos Usuarios",
+      "value": 142,
+      "icon": "person_add",
+      "trend": "up",
+      "percentage": 5
+    },
+    {
+      "id": "2",
+      "title": "Tasa de Rebote",
+      "value": "24.5%",
+      "icon": "trending_down",
+      "trend": "down",
+      "percentage": 2
+    },
+    {
+      "id": "3",
+      "title": "Errores de Servidor",
+      "value": 3,
+      "icon": "bug_report",
+      "trend": "down",
+      "percentage": 45
+    },
+    {
+      "id": "4",
+      "title": "Tiempo de Sesión",
+      "value": "4m 32s",
+      "icon": "timer",
+      "trend": "up",
+      "percentage": 8
+    },
+    {
+      "id": "5",
+      "title": "Ticket Promedio",
+      "value": 85.2,
+      "icon": "shopping_bag",
+      "trend": "up",
+      "percentage": 15
+    },
+    {
+      "id": "6",
+      "title": "Suscripciones Activas",
+      "value": 1240,
+      "icon": "subscriptions",
+      "trend": "up",
+      "percentage": 3
+    },
+    {
+      "id": "7",
+      "title": "Bajas del Mes",
+      "value": 12,
+      "icon": "person_remove",
+      "trend": "down",
+      "percentage": 10
+    },
+    {
+      "id": "8",
+      "title": "Dispositvos quitados",
+      "value": 3,
+      "icon": "Iot_remove",
+      "trend": "down",
+      "percentage": 7
+    }
+  ],
+  "users": [
+    {
+      "id": "0",
+      "name": "Admin Principal",
+      "email": "admin@adminpro.com",
+      "role": "Super Admin",
+      "status": "online",
+      "lastLogin": "2026-03-05T08:30:00Z"
+    },
+    {
+      "id": "1",
+      "name": "Juan Pérez",
+      "email": "juan@empresa.com",
+      "role": "Editor",
+      "status": "offline",
+      "lastLogin": "2026-03-04T15:20:00Z"
+    },
+    {
+      "id": "2",
+      "name": "Maria García",
+      "email": "maria@staff.com",
+      "role": "Analista",
+      "status": "online",
+      "lastLogin": "2026-03-05T09:00:00Z"
+    },
+    {
+      "id": "3",
+      "name": "Carlos Ruiz",
+      "email": "cruiz@servicios.com",
+      "role": "Observador",
+      "status": "away",
+      "lastLogin": "2026-03-05T07:45:00Z"
+    },
+    {
+      "id": "4",
+      "name": "Ana Belén",
+      "email": "ana.belen@tienda.es",
+      "role": "Editor",
+      "status": "offline",
+      "lastLogin": "2026-03-02T10:15:00Z"
+    },
+    {
+      "id": "5",
+      "name": "Roberto Gómez",
+      "email": "rgomez@empresa.com",
+      "role": "Analista",
+      "status": "online",
+      "lastLogin": "2026-03-05T11:20:00Z"
+    },
+    {
+      "id": "6",
+      "name": "Marta",
+      "email": "marta@staff.com",
+      "role": "Operario",
+      "status": "online",
+      "lastLogin": "2026-03-05T12:00:00Z"
+    },
+    {
+      "id": "7",
+      "name": "Pau",
+      "email": "pau@gmail.com",
+      "role": "Observador",
+      "status": "away",
+      "lastLogin": "2026-03-04T18:30:00Z"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

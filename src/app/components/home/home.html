@@ -1,0 +1,47 @@
+<section class="dashboard-header">
+  <h2>Métricas del Sistema</h2>
+  <input
+    type="text"
+    class="search-input"
+    placeholder="Filtrar métricas..."
+    #statFilter
+    (input)="filterStats(statFilter.value)"
+  >
+</section>
+
+<section class="results">
+  @for (stat of filteredStats$ | async; track stat.id) {
+    <app-stat-card [stat]="stat"></app-stat-card>
+  } @empty {
+    <div class="no-results">
+      <p>No hay métricas con ese nombre.</p>
+    </div>
+  }
+</section>
+
+<hr class="separator">
+
+<section class="user-management">
+  <h2>Gestión de Usuarios</h2>
+  <input
+    type="text"
+    class="search-input"
+    #userFilter
+    (input)="filterUsers(userFilter.value)"
+    placeholder="Buscar usuario por nombre..."
+  >
+
+  <div class="user-list">
+    @for (user of filteredUsers$ | async; track user.id) {
+      <div class="user-item">
+        <div class="user-info">
+          <img src="https://cdn.simpleicons.org/github/1e293b" alt="Imagen de perfil" class="mini-avatar">
+          <span>{{ user.name }}</span>
+        </div>
+        <a [routerLink]="['/user-detail', user.id]" class="detail-link">Ver Perfil</a>
+      </div>
+    } @empty {
+      <p class="empty-msg">No se encontraron usuarios.</p>
+    }
+  </div>
+</section>

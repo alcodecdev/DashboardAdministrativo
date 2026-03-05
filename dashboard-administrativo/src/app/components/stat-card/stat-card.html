@@ -1,0 +1,18 @@
+<div class="card">
+  <div class="header">
+    {{ stat.title }}
+    <span class="material-icons" style="color: #94a3b8;">{{ stat.icon }}</span>
+  </div>
+
+  <div class="body">
+    {{ stat.value }}
+  </div>
+
+  <div class="footer" [ngClass]="stat.trend">
+    <span class="trend-icon">
+      {{ stat.trend === 'up' ? '▲' : '▼' }}
+    </span>
+    <span>{{ stat.percentage }}%</span>
+    <span style="color: #94a3b8; font-weight: 400;">vs mes anterior</span>
+  </div>
+</div>

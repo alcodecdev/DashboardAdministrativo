@@ -1,0 +1,39 @@
+<div class="admin-layout">
+  <aside class="sidebar" [class.open]="isMenuOpen">
+    <div class="brand">
+      <img src="https://cdn.simpleicons.org/github/38bdf8" alt="Logo" class="logo">
+      <span>Administrador</span>
+      <button class="menu-close" (click)="isMenuOpen = false">✕</button>
+    </div>
+
+    <nav>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="isMenuOpen = false">
+        <span class="icon">📊</span> Dashboard
+      </a>
+      <a routerLink="/settings" routerLinkActive="active" (click)="isMenuOpen = false">
+        <span class="icon">⚙️</span> Configuración
+      </a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <header class="top-header">
+      <button class="menu-toggle" (click)="isMenuOpen = true">☰</button>
+
+      <div class="search-bar-placeholder"></div>
+      <div class="user-info">
+        <span>Admin</span>
+        <div class="avatar"></div>
+      </div>
+    </header>
+
+    <div class="page-view">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  @if (isMenuOpen) {
+    <div class="sidebar-overlay" (click)="isMenuOpen = false"></div>
+
+  }
+</div>
