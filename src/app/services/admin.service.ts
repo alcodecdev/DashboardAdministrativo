@@ -3,13 +3,14 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { DashboardStats } from '../interfaces/dashboard-stats';
 import {User} from '../interfaces/user';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AdminService {
   private readonly http = inject(HttpClient);
-  private readonly url = 'http://localhost:3000';
+  private readonly url = environment.apiUrl;
 
 
   getDashboardStats(): Observable<DashboardStats[]> {
