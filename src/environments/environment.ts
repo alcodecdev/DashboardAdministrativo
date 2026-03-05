@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://my-json-server.typicode.com/alcodecdev/DashboardAdministrativo'
+  apiUrl: 'https://my-json-server.typicode.com/alcodecdev/DashboardAdministrativo',
+  apiUrlLocal: 'http://localhost:3000'
 };
