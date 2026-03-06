@@ -1,59 +1,79 @@
-# DashboardAdministrativo
+# Dashboard - Angular 17+
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+Un **panel de administración moderno y funcional** construido con **Angular 17+**, diseñado para gestionar usuarios y visualizar métricas de rendimiento en tiempo real.
 
-## Development server
+Este proyecto demuestra buenas prácticas de desarrollo en Angular, incluyendo **componentes standalone, arquitectura modular, consumo de APIs y feedback visual al usuario**.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
+#Características
+
+###Gestión de Usuarios
+- Listado completo de usuarios.
+- Visualización detallada de perfiles.
+- Edición de información de usuario.
+
+###Dashboard de Métricas
+Visualización de indicadores clave:
+
+- Ventas
+- Nuevos usuarios
+- Sesiones activas
+- Métricas de rendimiento
+
+### Navegación Inteligente
+- Sistema de rutas dinámicas.
+- Paso de parámetros entre vistas.
+- Navegación optimizada.
+
+### Feedback Visual
+Notificaciones modernas mediante **SweetAlert2** para:
+
+- Confirmaciones
+- Alertas
+- Mensajes de éxito o error
+
+### Arquitectura Moderna
+Uso de prácticas actuales de Angular:
+
+- `inject()` para dependencias
+- Componentes **Standalone**
+- Posibilidad de uso de **Signals**
+- Separación clara de responsabilidades
+
+### Configuración de Entornos
+Configuración dual de la aplicación:
+
+- **Desarrollo:** API local
+- **Producción:** API pública
+
+---
+
+# Stack Tecnológico
+
+| Tecnología                   | Descripción |
+|------------------------------|-------------|
+| **Angular 17+**              | Framework principal |
+| **Tailwind**                 | Estilos responsive |
+| **Material Icons**           | Sistema de iconografía |
+| **SweetAlert2**              | Alertas visuales |
+| **MockAPI / My JSON Server** | Simulación de backend |
+
+---
+
+# Estructura del Proyecto
 ```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+src/
+│
+├── app/
+│   ├── interfaces/      # Contratos de datos (User, Stats)
+│   ├── services/        # Lógica de comunicación con la API
+│   │   └── AdminService
+│   ├── components/      # Componentes reutilizables
+│   └── pages/           # Vistas principales
+│       ├── Home
+│       ├── UserDetail
+│       └── UserEdit
+│
+└── environments/        # Configuración de URLs de API
 ```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
