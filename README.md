@@ -6,14 +6,14 @@ Este proyecto demuestra buenas prácticas de desarrollo en Angular, incluyendo *
 
 ---
 
-#Características
+# Características
 
-###Gestión de Usuarios
+### Gestión de Usuarios
 - Listado completo de usuarios.
 - Visualización detallada de perfiles.
 - Edición de información de usuario.
 
-###Dashboard de Métricas
+### Dashboard de Métricas
 Visualización de indicadores clave:
 
 - Ventas
