@@ -1,18 +1,37 @@
-<div class="card">
-  <div class="header">
-    {{ stat.title }}
-    <span class="material-icons" style="color: #94a3b8;">{{ stat.icon }}</span>
+<div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 group">
+
+  <div class="flex items-center justify-between mb-4">
+    <h3 class="text-sm font-bold text-slate-500 uppercase tracking-widest">
+      {{ stat.title }}
+    </h3>
+    <div class="p-2 bg-slate-50 rounded-lg group-hover:bg-blue-50 transition-colors">
+      <span class="material-icons text-slate-400 group-hover:text-blue-500 transition-colors">
+        {{ stat.icon }}
+      </span>
+    </div>
   </div>
 
-  <div class="body">
-    {{ stat.value }}
-  </div>
-
-  <div class="footer" [ngClass]="stat.trend">
-    <span class="trend-icon">
-      {{ stat.trend === 'up' ? '▲' : '▼' }}
+  <div class="flex items-baseline gap-2 mb-4">
+    <span class="text-3xl font-black text-slate-900 tracking-tight">
+      {{ stat.value }}
     </span>
-    <span>{{ stat.percentage }}%</span>
-    <span style="color: #94a3b8; font-weight: 400;">vs mes anterior</span>
+  </div>
+
+  <div class="flex items-center gap-2 pt-4 border-t border-slate-50">
+
+    <div class="flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-bold"
+         [ngClass]="{
+        'bg-emerald-100 text-emerald-700': stat.trend === 'up',
+        'bg-rose-100 text-rose-700': stat.trend === 'down'
+      }">
+      <span class="text-[10px]">
+        {{ stat.trend === 'up' ? '▲' : '▼' }}
+      </span>
+      <span>{{ stat.percentage }}%</span>
+    </div>
+
+    <span class="text-xs font-medium text-slate-400">
+      vs mes anterior
+    </span>
   </div>
 </div>

@@ -1,40 +1,65 @@
-<article class="user-container">
+<article class="max-w-4xl mx-auto py-8 px-4">
   @if (user$ | async; as user) {
-    <section class="user-card edit-mode">
-      <div class="user-header">
-        <h2 class="user-name">Modificando: {{ user.name }}</h2>
+    <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+
+      <div class="bg-slate-50 border-b border-slate-200 px-8 py-6">
+        <h2 class="text-xl font-bold text-slate-800 flex items-center gap-2">
+          <span class="material-symbols-rounded">contract_edit</span> Modificando: {{ user.name }}
+        </h2>
+        <p class="text-sm text-slate-500 mt-1">Actualiza la información básica y el rol de acceso del usuario.</p>
       </div>
 
-      <div class="user-form"> <div class="input-group">
-        <label class="form-label">Nombre Completo</label>
-        <input type="text" [(ngModel)]="user.name" class="form-control">
-      </div>
+      <div class="p-8 space-y-6">
 
-        <div class="input-group">
-          <label class="form-label">Correo Electrónico</label>
-          <input type="email" [(ngModel)]="user.email" class="form-control">
+        <div class="grid grid-cols-1 gap-2">
+          <label class="text-sm font-semibold text-slate-700 ml-1">Nombre Completo</label>
+          <input type="text" [(ngModel)]="user.name"
+                 class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-slate-50 focus:bg-white focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none transition-all duration-200 text-slate-800 placeholder:text-slate-400"
+                 placeholder="Ej. Juan Pérez">
         </div>
 
-        <div class="input-group">
-          <label class="form-label">Rol del Usuario</label>
-          <select [(ngModel)]="user.role" class="form-control">
-            <option value="Admin">Admin</option>
-            <option value="Super Admin">Super Admin</option>
-            <option value="Editor">Editor</option>
-            <option value="Observador">Observador</option>
-            <option value="Operario">Operario</option>
-          </select>
+        <div class="grid grid-cols-1 gap-2">
+          <label class="text-sm font-semibold text-slate-700 ml-1">Correo Electrónico</label>
+          <input type="email" [(ngModel)]="user.email"
+                 class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-slate-50 focus:bg-white focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none transition-all duration-200 text-slate-800"
+                 placeholder="correo@ejemplo.com">
+        </div>
+
+        <div class="grid grid-cols-1 gap-2">
+          <label class="text-sm font-semibold text-slate-700 ml-1">Rol del Usuario</label>
+          <div class="relative">
+            <select [(ngModel)]="user.role"
+                    class="w-full px-4 py-3 rounded-xl border border-slate-300 bg-slate-50 focus:bg-white focus:ring-4 focus:ring-blue-100 focus:border-blue-500 outline-none appearance-none transition-all duration-200 text-slate-800 cursor-pointer">
+              <option value="Admin">Admin</option>
+              <option value="Super Admin">Super Admin</option>
+              <option value="Editor">Editor</option>
+              <option value="Observador">Observador</option>
+              <option value="Operario">Operario</option>
+            </select>
+            <div class="absolute inset-y-0 right-4 flex items-center pointer-events-none text-slate-400">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="user-actions">
-        <button class="btn-save" (click)="save(user)">Guardar Cambios</button>
-        <button class="btn-cancel" (click)="cancel(user.id)">Cancelar</button>
+      <div class="bg-slate-50 px-8 py-6 flex flex-col sm:flex-row-reverse gap-3 border-t border-slate-200">
+        <button (click)="save(user)"
+                class="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-200 transition-all duration-200 active:scale-95">
+          Guardar Cambios
+        </button>
+        <button (click)="cancel(user.id)"
+                class="px-8 py-3 bg-white border border-slate-300 text-slate-600 font-semibold rounded-xl hover:bg-slate-50 transition-all duration-200">
+          Cancelar
+        </button>
       </div>
     </section>
   } @else {
-    <div class="loading-box">
-      <p>Cargando datos del usuario...</p>
+    <div class="flex flex-col items-center justify-center py-20 bg-white rounded-2xl border-2 border-dashed border-slate-200">
+      <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
+      <p class="text-slate-500 font-medium animate-pulse">Cargando datos del usuario...</p>
     </div>
   }
 </article>

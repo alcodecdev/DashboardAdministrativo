@@ -1,39 +1,43 @@
-<div class="admin-layout">
-  <aside class="sidebar" [class.open]="isMenuOpen">
-    <div class="brand">
-      <img src="https://cdn.simpleicons.org/github/38bdf8" alt="Logo" class="logo">
-      <span>Administrador</span>
-      <button class="menu-close" (click)="isMenuOpen = false">✕</button>
+<div class="flex h-screen bg-slate-50 overflow-hidden font-sans">
+
+  @if (isMenuOpen){
+  <div
+    (click)="isMenuOpen = false"
+    class="fixed inset-0 z-40 bg-slate-900/50 backdrop-blur-sm lg:hidden">
+  </div>
+  }
+  <aside
+    class="fixed inset-y-0 left-0 z-50 w-64 bg-slate-900 text-slate-300 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:h-full shadow-xl flex flex-col"
+    [class.-translate-x-full]="!isMenuOpen">
+
+    <div class="h-20 flex-shrink-0 flex items-center justify-between px-6 bg-slate-950/50 border-b border-slate-800">
+      <div class="flex items-center gap-3">
+        <img src="https://cdn.simpleicons.org/github/38bdf8" alt="Logo" class="w-8 h-8">
+        <span class="text-white font-bold tracking-tight text-lg">Admin Pro</span>
+      </div>
     </div>
 
-    <nav>
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" (click)="isMenuOpen = false">
-        <span class="icon">📊</span> Dashboard
+    <nav class="flex-1 mt-6 px-4 space-y-2 overflow-y-auto custom-scrollbar">
+      <a routerLink="/" routerLinkActive="bg-blue-600 text-white shadow-lg shadow-blue-900/20" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all hover:bg-slate-800 group">
+        <span class="material-symbols-rounded">grid_view</span> <span class="font-medium">Dashboard</span>
       </a>
-      <a routerLink="/settings" routerLinkActive="active" (click)="isMenuOpen = false">
-        <span class="icon">⚙️</span> Configuración
+      <a routerLink="/settings" routerLinkActive="bg-blue-600 text-white shadow-lg shadow-blue-900/20" class="flex items-center gap-3 px-4 py-3 rounded-xl transition-all hover:bg-slate-800 group">
+        <span class="material-symbols-rounded">settings</span> <span class="font-medium">Configuración</span>
       </a>
     </nav>
   </aside>
 
-  <main class="main-content">
-    <header class="top-header">
-      <button class="menu-toggle" (click)="isMenuOpen = true">☰</button>
+  <div class="flex-1 flex flex-col min-w-0">
 
-      <div class="search-bar-placeholder"></div>
-      <div class="user-info">
-        <span>Admin</span>
-        <div class="avatar"></div>
-      </div>
+    <header class="h-20 flex-shrink-0 bg-white border-b border-slate-200 flex items-center justify-between px-8 shadow-sm z-30">
+      <button (click)="isMenuOpen = true" class="lg:hidden p-2 text-slate-600">☰</button>
+      <h2 class="text-sm font-bold text-slate-400 uppercase tracking-widest">Panel de Control</h2>
     </header>
 
-    <div class="page-view">
-      <router-outlet></router-outlet>
-    </div>
-  </main>
-
-  @if (isMenuOpen) {
-    <div class="sidebar-overlay" (click)="isMenuOpen = false"></div>
-
-  }
+    <main class="flex-1 overflow-y-auto bg-slate-50 p-6 lg:p-10">
+      <div class="max-w-7xl mx-auto">
+        <router-outlet></router-outlet>
+      </div>
+    </main>
+  </div>
 </div>
